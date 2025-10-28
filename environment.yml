@@ -1,0 +1,9 @@
+name: workshop25
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - -r requirements.txt
+  - cudatoolkit=11.8  # optional: install only if using GPU; remove for CPU-only

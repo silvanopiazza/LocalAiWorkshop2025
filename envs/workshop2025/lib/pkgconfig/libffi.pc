@@ -1,0 +1,11 @@
+prefix=/home/silvanopiazza/Desktop/workshop25/envs/workshop2025
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+toolexeclibdir=${libdir}
+includedir=/home/silvanopiazza/Desktop/workshop25/envs/workshop2025/include
+
+Name: libffi
+Description: Library supporting Foreign Function Interfaces
+Version: 3.5.2
+Libs: -L${toolexeclibdir} -lffi
+Cflags: -I${includedir}
