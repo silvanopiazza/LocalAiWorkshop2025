@@ -7,3 +7,4 @@ torch>=2.0.0
 datasets>=2.9.0
 peft>=0.4.0
 accelerate>=0.20.3
+huggingface_hub>=0.20.0
