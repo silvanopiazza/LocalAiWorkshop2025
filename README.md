@@ -20,3 +20,16 @@ How to get started (Linux)
 3. Run `scripts/verify_setup.sh` to quickly check key components.
 
 See `docs/WORKSHOP_SCOPE.md` for the workshop scope and module plan.
+
+## Offline preparation
+
+Several notebooks now expect models to be present in the local Hugging Face cache. Run these commands (requires the `huggingface_hub` CLI, installed via `pip install huggingface_hub`) **before** the workshop:
+
+```bash
+huggingface-cli download --repo-type model distilgpt2 --local-dir ~/.cache/huggingface/hub/models--distilgpt2 --local-dir-use-symlinks False
+huggingface-cli download --repo-type model sentence-transformers/all-MiniLM-L6-v2 --local-dir ~/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2 --local-dir-use-symlinks False
+```
+
+The cache paths above match the defaults used by `transformers` and `sentence-transformers`. Adjust `HF_HOME`/`HF_HUB_CACHE` if you store models elsewhere.
+
+Optional: to run the GGUF example in `05-applications*`, install `llama-cpp-python` and place the workshop-provided `tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf` under `assets/models/`.
